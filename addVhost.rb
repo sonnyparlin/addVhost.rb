@@ -24,12 +24,12 @@ client.close
 puts "Creating Apache configuration"
 File.open("/etc/apache2/sites-available/#{domain}", "w") do |f|  
 	f.puts "<VirtualHost *:80>"
-     	f.puts "	ServerAdmin sonnyparlin@gmail.com"
-     	f.puts "	ServerName #{domain}"
-     	f.puts "	ServerAlias www.#{domain}"
-     	f.puts "	DocumentRoot /var/www/#{domain}/public_html/"
-        f.puts "	ErrorLog /var/log/apache2/error.log"
-        f.puts "	CustomLog /var/log/apache2/access.log combined"
+	f.puts "	ServerAdmin sonnyparlin@gmail.com"
+	f.puts "	ServerName #{domain}"
+	f.puts "	ServerAlias www.#{domain}"
+	f.puts "	DocumentRoot /var/www/#{domain}/public_html/"
+	f.puts "	ErrorLog /var/log/apache2/error.log"
+	f.puts "	CustomLog /var/log/apache2/access.log combined"
 	f.puts "</VirtualHost>"
 end  
 
