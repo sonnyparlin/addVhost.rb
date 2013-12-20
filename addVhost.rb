@@ -6,6 +6,7 @@ require 'open-uri'
 
 domain = ARGV[0]
 
+@server_admin = "sonnyparlin@gmail.com"
 @db_host = "xx.xxx.xx.xxx"
 @db_webhost = "xx.xxx.xx.xxx"
 @db_user = "xxxxxxxxxxxxxxxxx"
@@ -24,7 +25,7 @@ client.close
 puts "Creating Apache configuration"
 File.open("/etc/apache2/sites-available/#{domain}", "w") do |f|  
 	f.puts "<VirtualHost *:80>"
-	f.puts "	ServerAdmin sonnyparlin@gmail.com"
+	f.puts "	ServerAdmin #{@server_admin}"
 	f.puts "	ServerName #{domain}"
 	f.puts "	ServerAlias www.#{domain}"
 	f.puts "	DocumentRoot /var/www/#{domain}/public_html/"
