@@ -1,3 +1,19 @@
+#!/usr/bin/env ruby
+
+require 'mysql2'
+require 'net/http'
+require 'open-uri'
+
+domain = ARGV[0]
+
+@db_host = "xx.xxx.xx.xxx"
+@db_webhost = "xx.xxx.xx.xxx"
+@db_user = "xxxxxxxxxxxxxxxxx"
+@db_pass = "xxxxxxxxxxxxxxxxx"
+@db_name = domain.split(".")
+@db_name = @db_name[0]
+@db_name = @db_name[0,16] #mysql don't like usernames longer than 16 characters
+
 puts "Creating database"
 client = Mysql2::Client.new(:host => @db_host, :username => @db_user, :password => @db_pass)
 client.query("DROP DATABASE IF EXISTS #{@db_name}")
