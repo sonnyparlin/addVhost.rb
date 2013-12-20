@@ -6,7 +6,7 @@ require 'open-uri'
 
 domain = ARGV[0]
 
-@server_admin = "sonnyparlin@gmail.com"
+@server_admin = "somebody@somewhere.com"
 @db_host = "xx.xxx.xx.xxx"
 @db_webhost = "xx.xxx.xx.xxx"
 @db_user = "xxxxxxxxxxxxxxxxx"
